@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabelereira Taquaral Hair Studio - Campinas</title>
+  <meta name="description" content="A Cabelereira Taquaral Hair Studio resolve hoje em Campinas com corte, coloração e tratamento profissional.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',system-ui,sans-serif;color:#1a1a2e;background:#faf9f7;line-height:1.6}
+    a{text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .header{position:sticky;top:0;z-index:50;background:rgba(250,249,247,.95);backdrop-filter:blur(8px);border-bottom:1px solid #e8e5e0}
+    .header-inner{max-width:64rem;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
+    .header h1{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:600;letter-spacing:-0.02em;color:#1a1a2e}
+    .header-right{display:flex;align-items:center;gap:12px;font-size:0.85rem;color:#6b7280}
+
+    .hero{position:relative;min-height:55vh;display:flex;align-items:flex-end;overflow:hidden}
+    .hero img.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+    .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.5) 50%,rgba(0,0,0,.2))}
+    .hero-content{position:relative;z-index:2;padding:80px 16px 40px;max-width:64rem;margin:0 auto;width:100%}
+    .hero-divider{width:40px;height:2px;margin-bottom:16px}
+    .hero h2{font-family:'Playfair Display',Georgia,serif;font-size:2rem;font-weight:600;line-height:1.2;margin-bottom:12px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+    .hero p{color:rgba(255,255,255,.8);font-size:0.875rem;max-width:32rem;margin-bottom:12px;line-height:1.6;text-shadow:0 1px 4px rgba(0,0,0,.2)}
+    .hero-badge{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:9999px;font-size:0.8rem;font-weight:500;backdrop-filter:blur(4px);background:rgba(255,255,255,.1);color:rgba(255,255,255,.9);margin-bottom:24px;width:fit-content}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;font-size:0.95rem;font-weight:600;border-radius:8px;background:#25D366;color:#fff;box-shadow:0 8px 30px rgba(37,211,102,.3);transition:transform .2s,filter .2s;border:none;cursor:pointer}
+    .cta-btn:hover{transform:scale(1.03);filter:brightness(1.1)}
+
+    .benefits-strip{padding:24px 0}
+    .benefits-grid{max-width:64rem;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+
+    .section{padding:48px 16px;max-width:64rem;margin:0 auto}
+    .section-label{text-transform:uppercase;font-size:0.7rem;letter-spacing:0.2em;font-weight:500;margin-bottom:12px;text-align:center}
+    .section-heading{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;font-weight:600;letter-spacing:-0.02em;margin-bottom:16px;text-align:center;color:#1a1a2e}
+    .section-divider{width:64px;height:2px;margin:0 auto 32px}
+    .section-text{color:#6b7280;font-size:0.95rem;line-height:1.7;text-align:center;max-width:40rem;margin:0 auto}
+
+    .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+
+    .services-section{padding:48px 16px}
+    .services-grid{max-width:64rem;margin:0 auto;display:grid;grid-template-columns:1fr;gap:24px}
+
+    .reviews-grid{display:grid;grid-template-columns:1fr;gap:20px}
+
+    .stars-row{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:12px}
+
+    .map-container{border-radius:8px;overflow:hidden;margin-bottom:32px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+    .map-container iframe{width:100%;height:400px;border:0}
+
+    .qr-section{text-align:center;max-width:28rem;margin:0 auto}
+    .qr-box{display:inline-block;background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+
+    .final-cta{padding:56px 16px;text-align:center}
+    .final-cta h2{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;font-weight:600;margin-bottom:16px}
+    .final-cta p{font-size:0.95rem;max-width:28rem;margin:0 auto 32px}
+
+    footer{padding:40px 16px}
+    .footer-inner{max-width:64rem;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px}
+    .footer-bottom{margin-top:48px;padding-top:32px;text-align:center;font-size:0.75rem}
+
+    .fab{position:fixed;bottom:20px;right:20px;z-index:40;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:transform .2s;border:none;cursor:pointer}
+    .fab:hover{transform:scale(1.1)}
+    .fab svg{width:24px;height:24px}
+
+    .contact-form{max-width:28rem;margin:0 auto}
+    .contact-form label{display:block;font-size:0.8rem;font-weight:500;margin-bottom:4px;color:#374151}
+    .contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:6px;font-size:0.875rem;font-family:inherit;margin-bottom:16px;background:#fff}
+    .contact-form textarea{resize:vertical;min-height:80px}
+
+    @media(min-width:640px){
+      .hero{min-height:70vh}
+      .hero h2{font-size:2.5rem}
+      .hero p{font-size:1rem}
+      .hero-content{padding:80px 20px 56px}
+      .header-inner{padding:16px 20px}
+      .header h1{font-size:1.25rem}
+      .section{padding:64px 20px}
+      .services-section{padding:64px 20px}
+    }
+    @media(min-width:768px){
+      .hero{min-height:85vh}
+      .hero h2{font-size:3rem}
+      .benefits-grid{grid-template-columns:repeat(4,1fr)}
+      .gallery-grid{grid-template-columns:repeat(3,1fr)}
+      .reviews-grid{grid-template-columns:repeat(3,1fr)}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(min-width:1024px){
+      .gallery-grid{grid-template-columns:repeat(4,1fr)}
+      .section{padding:80px 64px}
+      .services-section{padding:80px 64px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <h1>Cabelereira Taquaral Hair Studio</h1>
+      <div class="header-right">
+        <span style="display:flex;align-items:center;gap:6px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:hsl(38 60% 55%)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Campinas
+        </span>
+        
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <img class="hero-bg" src="https://clientesnogoogle.lovable.app/src/assets/hero-salon.jpg" alt="Cabelereira Taquaral Hair Studio - salão de beleza em Campinas" width="1280" height="832">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-divider" style="background:hsl(38 60% 55%)"></div>
+        <h2>Cabelo não saiu como você queria?</h2>
+        <p>A Cabelereira Taquaral Hair Studio resolve hoje em Campinas com corte, coloração e tratamento profissional.</p>
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:hsl(38 60% 55%)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Campinas
+        </div>
+        <a href="https://wa.me/5555199944854?text=Ol%C3%A1%2C%20preciso%20de%20um%20hor%C3%A1rio%20urgente%20na%20Cabelereira%20Taquaral%20Hair%20Studio.%20Tem%20vaga%20pra%20hoje%3F" target="_blank" rel="noopener noreferrer" class="cta-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Falar com atendimento agora no WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- Benefits Strip -->
+    <section class="benefits-strip" style="background:hsl(280 20% 18%)">
+      <div class="benefits-grid">
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.875rem;font-weight:500;color:hsl(280 15% 97%)">
+      <span style="color:hsl(38 60% 55%)">✓</span>Atendimento imediato com hora marcada
+    </div>
+<div style="display:flex;align-items:center;gap:8px;font-size:0.875rem;font-weight:500;color:hsl(280 15% 97%)">
+      <span style="color:hsl(38 60% 55%)">✓</span>Profissionais experientes e atualizados
+    </div>
+<div style="display:flex;align-items:center;gap:8px;font-size:0.875rem;font-weight:500;color:hsl(280 15% 97%)">
+      <span style="color:hsl(38 60% 55%)">✓</span>Produtos importados de alta qualidade
+    </div>
+<div style="display:flex;align-items:center;gap:8px;font-size:0.875rem;font-weight:500;color:hsl(280 15% 97%)">
+      <span style="color:hsl(38 60% 55%)">✓</span>Resultado garantido ou refazemos
+    </div>
+      </div>
+    </section>
+
+    <!-- Social Proof / Reviews -->
+    <section class="section">
+      <p class="section-label" style="color:hsl(38 60% 55%)">Avaliações reais</p>
+      <h2 class="section-heading">O que nossos clientes dizem</h2>
+      <div class="section-divider" style="background:hsl(38 60% 55%)"></div>
+      <div class="stars-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <div style="height:40px"></div>
+      <div class="reviews-grid">
+        <div style="background:hsl(280 12% 94%);border-radius:12px;padding:24px;box-shadow:0 1px 2px rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.05)">
+      <div style="display:flex;gap:2px;margin-bottom:12px"><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <p style="font-size:0.875rem;line-height:1.6;margin-bottom:16px;font-style:italic;color:#1a1a2e">"Agendei pelo WhatsApp às 8h e às 9h já estava sendo atendida. Sem enrolação nenhuma."</p>
+      <p style="font-size:0.75rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#6b7280">— Tatiane O.</p>
+    </div>
+<div style="background:hsl(280 12% 94%);border-radius:12px;padding:24px;box-shadow:0 1px 2px rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.05)">
+      <div style="display:flex;gap:2px;margin-bottom:12px"><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <p style="font-size:0.875rem;line-height:1.6;margin-bottom:16px;font-style:italic;color:#1a1a2e">"Meu cabelo estava destruído e em uma sessão resolveram tudo. Saí outra pessoa!"</p>
+      <p style="font-size:0.75rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#6b7280">— Roberto A.</p>
+    </div>
+<div style="background:hsl(280 12% 94%);border-radius:12px;padding:24px;box-shadow:0 1px 2px rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.05)">
+      <div style="display:flex;gap:2px;margin-bottom:12px"><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(38 60% 55%)" stroke="hsl(38 60% 55%)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <p style="font-size:0.875rem;line-height:1.6;margin-bottom:16px;font-style:italic;color:#1a1a2e">"Nunca mais vou em outro salão. Aqui resolvem rápido e o resultado é sempre impecável."</p>
+      <p style="font-size:0.75rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#6b7280">— Carlos E.</p>
+    </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section">
+      <div style="text-align:center;max-width:40rem;margin:0 auto">
+        <p class="section-label" style="color:hsl(38 60% 55%)">Por que estão nos escolhendo?</p>
+        <h2 class="section-heading" style="white-space:pre-line">Resultado garantido
+ou refazemos de graça</h2>
+        <div class="section-divider" style="background:hsl(38 60% 55%)"></div>
+        <p class="section-text">Você já saiu de um salão frustrada? Aqui isso não acontece. A Cabelereira Taquaral Hair Studio atende com hora marcada, sem atraso, sem enrolação. Produtos de primeira linha, profissionais que entendem o que você quer. Mais de 100 clientes por mês confiam na gente em Campinas. Chame agora no WhatsApp.</p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section">
+      <div style="text-align:center;margin-bottom:48px">
+        <p class="section-label" style="color:hsl(38 60% 55%)">Veja o que fazemos</p>
+        <h2 class="section-heading">Resultados reais de clientes</h2>
+        <div class="section-divider" style="background:hsl(38 60% 55%)"></div>
+      </div>
+      <div class="gallery-grid">
+        <div style="grid-column:span 2;grid-row:span 2;overflow:hidden;border-radius:6px">
+      <img src="https://kufdtrzszysizygaznct.supabase.co/storage/v1/object/public/lead-photos/cabelereira-taquaral/1775582843717-0.jpg" alt="Foto do estabelecimento 1" loading="lazy" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+<div style="overflow:hidden;border-radius:6px">
+      <img src="https://kufdtrzszysizygaznct.supabase.co/storage/v1/object/public/lead-photos/cabelereira-taquaral/1775582844849-1.jpg" alt="Foto do estabelecimento 2" loading="lazy" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+<div style="overflow:hidden;border-radius:6px">
+      <img src="https://kufdtrzszysizygaznct.supabase.co/storage/v1/object/public/lead-photos/cabelereira-taquaral/1775582845919-2.jpg" alt="Foto do estabelecimento 3" loading="lazy" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+<div style="overflow:hidden;border-radius:6px">
+      <img src="https://kufdtrzszysizygaznct.supabase.co/storage/v1/object/public/lead-photos/cabelereira-taquaral/1775582847345-3.jpg" alt="Foto do estabelecimento 4" loading="lazy" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+<div style="overflow:hidden;border-radius:6px">
+      <img src="https://kufdtrzszysizygaznct.supabase.co/storage/v1/object/public/lead-photos/cabelereira-taquaral/1775582848499-4.jpg" alt="Foto do estabelecimento 5" loading="lazy" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+<div style="overflow:hidden;border-radius:6px">
+      <img src="https://kufdtrzszysizygaznct.supabase.co/storage/v1/object/public/lead-photos/cabelereira-taquaral/1775582849957-5.jpg" alt="Foto do estabelecimento 6" loading="lazy" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+<div style="overflow:hidden;border-radius:6px">
+      <img src="https://kufdtrzszysizygaznct.supabase.co/storage/v1/object/public/lead-photos/cabelereira-taquaral/1775582851327-6.jpg" alt="Foto do estabelecimento 7" loading="lazy" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+<div style="overflow:hidden;border-radius:6px">
+      <img src="https://kufdtrzszysizygaznct.supabase.co/storage/v1/object/public/lead-photos/cabelereira-taquaral/1775582852833-7.jpg" alt="Foto do estabelecimento 8" loading="lazy" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+<div style="overflow:hidden;border-radius:6px">
+      <img src="https://kufdtrzszysizygaznct.supabase.co/storage/v1/object/public/lead-photos/cabelereira-taquaral/1775582854045-8.jpg" alt="Foto do estabelecimento 9" loading="lazy" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+<div style="overflow:hidden;border-radius:6px">
+      <img src="https://kufdtrzszysizygaznct.supabase.co/storage/v1/object/public/lead-photos/cabelereira-taquaral/1775582855661-9.jpg" alt="Foto do estabelecimento 10" loading="lazy" style="width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services-section" style="background:hsl(280 12% 94%)">
+      <div style="max-width:64rem;margin:0 auto">
+        <div style="text-align:center;margin-bottom:56px">
+          <p class="section-label" style="color:hsl(38 60% 55%)">Resolva agora</p>
+          <h2 class="section-heading">Não espere mais</h2>
+          <div class="section-divider" style="background:hsl(38 60% 55%)"></div>
+        </div>
+        <div class="services-grid">
+          <div style="background:#fff;border-radius:8px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.08)">
+      <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:600;margin-bottom:12px;color:#1a1a2e">Corte e Escova Urgente</h3>
+      <p style="color:#6b7280;font-size:0.875rem;line-height:1.6">Precisa ficar pronta hoje? Corte + escova sem espera. Chame no WhatsApp agora.</p>
+    </div>
+<div style="background:#fff;border-radius:8px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.08)">
+      <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:600;margin-bottom:12px;color:#1a1a2e">Coloração de Emergência</h3>
+      <p style="color:#6b7280;font-size:0.875rem;line-height:1.6">Raiz aparecendo? Resolvemos em uma sessão. Resultado imediato.</p>
+    </div>
+<div style="background:#fff;border-radius:8px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.08)">
+      <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:600;margin-bottom:12px;color:#1a1a2e">Tratamento Capilar</h3>
+      <p style="color:#6b7280;font-size:0.875rem;line-height:1.6">Cabelo quebradiço e sem vida? Hidratação profunda que recupera na hora.</p>
+    </div>
+<div style="background:#fff;border-radius:8px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.08)">
+      <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:600;margin-bottom:12px;color:#1a1a2e">Maquiagem e Penteado</h3>
+      <p style="color:#6b7280;font-size:0.875rem;line-height:1.6">Evento hoje? Produção completa com resultado profissional. Últimas vagas.</p>
+    </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="services-section" style="background:hsl(280 12% 94%)">
+      <div style="max-width:64rem;margin:0 auto">
+        <div style="text-align:center;margin-bottom:48px">
+          <p class="section-label" style="color:hsl(38 60% 55%)">Contato</p>
+          <h2 class="section-heading">Fale conosco</h2>
+          <div class="section-divider" style="background:hsl(38 60% 55%)"></div>
+          <p style="color:#6b7280;font-size:0.875rem">Preencha seus dados e envie direto pelo WhatsApp.</p>
+        </div>
+        <div class="contact-form">
+          <label>Seu nome *</label>
+          <input type="text" id="cf-name" placeholder="Como podemos te chamar?">
+          <label>Seu WhatsApp *</label>
+          <input type="tel" id="cf-phone" placeholder="(11) 99999-9999">
+          
+          <label>Mensagem</label>
+          <textarea id="cf-msg" placeholder="Conte um pouco do que precisa..."></textarea>
+          <button onclick="sendWhatsApp()" class="cta-btn" style="width:100%;justify-content:center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            ENVIAR PELO WHATSAPP
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Maps -->
+    <section class="section">
+      <div style="text-align:center;margin-bottom:48px">
+        <p class="section-label" style="color:hsl(38 60% 55%)">Localização</p>
+        <h2 class="section-heading">Onde estamos</h2>
+        <div class="section-divider" style="background:hsl(38 60% 55%)"></div>
+      </div>
+      <div class="map-container">
+        <iframe title="Localização de Cabelereira Taquaral Hair Studio" src="https://maps.google.com/maps?q=Cabelereira%20Taquaral%20Hair%20Studio%20Campinas&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div style="text-align:center">
+        <a href="https://www.google.com/maps/search/Cabelereira%20Taquaral%20Hair%20Studio%20Campinas" target="_blank" rel="noopener noreferrer" class="cta-btn" style="background:hsl(280 20% 18%);color:hsl(280 15% 97%)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Ver no Google Maps
+        </a>
+      </div>
+    </section>
+
+    <!-- QR Code -->
+    <section class="section">
+      <div class="qr-section">
+        <p class="section-label" style="color:hsl(38 60% 55%)">Avalie-nos</p>
+        <h2 class="section-heading">Sua opinião importa</h2>
+        <div class="section-divider" style="background:hsl(38 60% 55%)"></div>
+        <p style="color:#6b7280;font-size:0.875rem;margin-bottom:32px">
+          Sua opinião é muito importante para nós.<br>
+          Escaneie o QR Code e deixe sua avaliação no Google.
+        </p>
+        <div class="qr-box">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2FCabelereira%2520Taquaral%2520Hair%2520Studio%2520Campinas" alt="QR Code para avaliar no Google" width="200" height="200" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" style="background:hsl(280 20% 18%)">
+      <h2 style="color:hsl(280 15% 97%)">Entre em contato</h2>
+      <p style="color:hsl(280 15% 97% / 0.7)">Atendimento profissional em Campinas e região. Fale conosco pelo WhatsApp.</p>
+      <a href="https://wa.me/5555199944854?text=Ol%C3%A1%2C%20preciso%20de%20um%20hor%C3%A1rio%20urgente%20na%20Cabelereira%20Taquaral%20Hair%20Studio.%20Tem%20vaga%20pra%20hoje%3F" target="_blank" rel="noopener noreferrer" class="cta-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Falar com atendimento agora no WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:hsl(280 20% 18%)">
+    <div class="footer-inner" style="padding:40px 16px">
+      <div>
+        <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:600;margin-bottom:16px;color:hsl(280 15% 97%)">Cabelereira Taquaral Hair Studio</h3>
+        <p style="font-size:0.875rem;line-height:1.6;color:hsl(280 15% 97% / 0.7)">Não perca mais tempo. Chame a gente em Campinas agora!</p>
+        
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:flex-start;gap:12px;font-size:0.875rem;color:hsl(280 15% 97% / 0.8)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(38 60% 55%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Campinas</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:0.875rem;color:hsl(280 15% 97% / 0.8)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(38 60% 55%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>5555199944854</span>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;align-items:flex-start;gap:12px;font-size:0.875rem;color:hsl(280 15% 97% / 0.8)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(38 60% 55%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div>
+            <p>Seg a Sex: 9h às 20h</p>
+            <p>Sáb: 9h às 18h</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom" style="border-top:1px solid hsl(280 15% 97% / 0.1);color:hsl(280 15% 97% / 0.5)">
+      <p>© 2026 Cabelereira Taquaral Hair Studio. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/5555199944854?text=Ol%C3%A1%2C%20preciso%20de%20um%20hor%C3%A1rio%20urgente%20na%20Cabelereira%20Taquaral%20Hair%20Studio.%20Tem%20vaga%20pra%20hoje%3F" target="_blank" rel="noopener noreferrer" aria-label="Chamar no WhatsApp agora" class="fab">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </a>
+
+  <script>
+    function sendWhatsApp(){
+      var name=document.getElementById('cf-name').value;
+      var phone=document.getElementById('cf-phone').value;
+      var svc=document.getElementById('cf-service');
+      var msg=document.getElementById('cf-msg').value;
+      if(!name||phone.replace(/\D/g,'').length<10){alert('Preencha nome e WhatsApp');return}
+      var text='Olá! Meu nome é '+name+'.';
+      if(svc&&svc.value)text+=' Tenho interesse em: '+svc.value+'.';
+      if(msg)text+=' '+msg;
+      text+=' (Enviado pelo site Cabelereira Taquaral Hair Studio)';
+      window.open('https://wa.me/5555199944854?text='+encodeURIComponent(text),'_blank');
+    }
+  </script>
+</body>
+</html>
